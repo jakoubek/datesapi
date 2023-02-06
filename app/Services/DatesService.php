@@ -4,8 +4,8 @@ namespace App\Services;
 
 use Carbon\Carbon;
 
-class DatesService {
-
+class DatesService
+{
     private $date;
 
     public function __construct()
@@ -45,22 +45,21 @@ class DatesService {
 
     public function thisMonth(?string $locale = 'en')
     {
-        return $this->date->locale($locale)->monthName . " " . $this->date->year;
+        return $this->date->locale($locale)->monthName.' '.$this->date->year;
     }
 
     public function nextMonth(?string $locale = 'en')
     {
-        return $this->date->addMonth()->locale($locale)->monthName . " " . $this->date->year;
+        return $this->date->addMonth()->locale($locale)->monthName.' '.$this->date->year;
     }
 
     public function lastMonth(?string $locale = 'en')
     {
-        return $this->date->subMonth()->locale($locale)->monthName . " " . $this->date->year;
+        return $this->date->subMonth()->locale($locale)->monthName.' '.$this->date->year;
     }
 
     public function timestamp()
     {
         return $this->date->timestamp;
     }
-
 }

@@ -1,9 +1,8 @@
 <?php
 
+use App\Services\DatesService;
 use Illuminate\Foundation\Inspiring;
 use Illuminate\Support\Facades\Artisan;
-
-use App\Services\DatesService;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,7 +16,7 @@ use App\Services\DatesService;
 */
 
 Artisan::command('dates:today', function () {
-   $this->info((new DatesService())->today());
+    $this->info((new DatesService())->today());
 });
 Artisan::command('dates:tomorrow', function () {
     $this->info((new DatesService())->tomorrow());
@@ -43,7 +42,6 @@ Artisan::command('dates:next-month', function () {
 Artisan::command('dates:last-month', function () {
     $this->info((new DatesService())->lastMonth());
 });
-
 
 Artisan::command('inspire', function () {
     $this->comment(Inspiring::quote());

@@ -1,8 +1,8 @@
 <?php
 
+use App\Http\Controllers\DatesController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\DatesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,4 +29,3 @@ Route::get('this-month', [DatesController::class, 'thisMonth']);
 Route::get('next-month', [DatesController::class, 'nextMonth']);
 Route::get('last-month', [DatesController::class, 'lastMonth']);
 Route::get('timestamp', [DatesController::class, 'timestamp']);
-

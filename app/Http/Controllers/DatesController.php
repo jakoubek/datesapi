@@ -2,13 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Services\DatesService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
-use App\Services\DatesService;
 
 class DatesController extends Controller
 {
-
     protected $datesService;
 
     /**
@@ -30,6 +29,7 @@ class DatesController extends Controller
     {
         $this->logRequest('today');
         $dt = $this->datesService->today();
+
         return response()->json(['result' => $dt], 200);
     }
 
@@ -42,6 +42,7 @@ class DatesController extends Controller
     {
         $this->logRequest('tomorrow');
         $dt = $this->datesService->tomorrow();
+
         return response()->json(['result' => $dt], 200);
     }
 
@@ -54,6 +55,7 @@ class DatesController extends Controller
     {
         $this->logRequest('yesterday');
         $dt = $this->datesService->yesterday();
+
         return response()->json(['result' => $dt], 200);
     }
 
@@ -66,6 +68,7 @@ class DatesController extends Controller
     {
         $this->logRequest('thisYear');
         $dt = $this->datesService->thisYear();
+
         return response()->json(['result' => $dt], 200);
     }
 
@@ -78,6 +81,7 @@ class DatesController extends Controller
     {
         $this->logRequest('nextYear');
         $dt = $this->datesService->nextYear();
+
         return response()->json(['result' => $dt], 200);
     }
 
@@ -90,6 +94,7 @@ class DatesController extends Controller
     {
         $this->logRequest('lastYear');
         $dt = $this->datesService->lastYear();
+
         return response()->json(['result' => $dt], 200);
     }
 
@@ -102,7 +107,8 @@ class DatesController extends Controller
     public function thisMonth(Request $request)
     {
         $this->logRequest('thisMonth');
-        $dt = $this->datesService->thisMonth($request->get("lang", "en"));
+        $dt = $this->datesService->thisMonth($request->get('lang', 'en'));
+
         return response()->json(['result' => $dt], 200);
     }
 
@@ -115,7 +121,8 @@ class DatesController extends Controller
     public function nextMonth(Request $request)
     {
         $this->logRequest('nextMonth');
-        $dt = $this->datesService->nextMonth($request->get("lang", "en"));
+        $dt = $this->datesService->nextMonth($request->get('lang', 'en'));
+
         return response()->json(['result' => $dt], 200);
     }
 
@@ -128,7 +135,8 @@ class DatesController extends Controller
     public function lastMonth(Request $request)
     {
         $this->logRequest('lastMonth');
-        $dt = $this->datesService->lastMonth($request->get("lang", "en"));
+        $dt = $this->datesService->lastMonth($request->get('lang', 'en'));
+
         return response()->json(['result' => $dt], 200);
     }
 
@@ -141,6 +149,7 @@ class DatesController extends Controller
     {
         $this->logRequest('timestamp');
         $dt = $this->datesService->timestamp();
+
         return response()->json(['result' => $dt], 200);
     }
 
